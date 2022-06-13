@@ -5,7 +5,6 @@ using UnityEngine;
 public class AimTurret : MonoBehaviour
 {
     public float turretRotationSpeed = 150;
-    public float offsetAngle = 90;
 
     public void Aim(Vector2 inputPointerPosition)
     {
@@ -15,6 +14,6 @@ public class AimTurret : MonoBehaviour
 
         var rotationStep = turretRotationSpeed * Time.deltaTime;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, desiredAngle -offsetAngle), rotationStep);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, desiredAngle), rotationStep);
     }
 }

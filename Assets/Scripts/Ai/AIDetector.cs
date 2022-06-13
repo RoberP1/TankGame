@@ -68,6 +68,7 @@ public class AIDetector : MonoBehaviour
     private void CheckIfPlayerInRange()
     {
         Collider2D collision = Physics2D.OverlapCircle(transform.position, viewRadius, playerLayerMask);
+        
         if (collision != null)
         {
             Target = collision.transform;
