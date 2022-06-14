@@ -29,7 +29,7 @@ public class PlayerInput : MonoBehaviour
 
     private void GetShootingInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
             OnShoot?.Invoke();
         }
@@ -37,7 +37,7 @@ public class PlayerInput : MonoBehaviour
 
     private void GetTurretMovement()
     {
-        OnMoveTurret?.Invoke(GetMousePositon());
+        OnMoveTurret?.Invoke(GetJoystickPositon());
     }
 
     private Vector2 GetMousePositon()
@@ -46,6 +46,11 @@ public class PlayerInput : MonoBehaviour
         mousePosition.z = mainCamera.nearClipPlane;
         Vector2 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
         return mouseWorldPosition;
+    }
+    private Vector2 GetJoystickPositon()
+    {
+        Vector2 JoyDirection = new Vector2(Input.GetAxis("RightJoyY"), Input.GetAxis("RightJoyX"));
+        return JoyDirection;
     }
 
     private void GetBodyMovement()

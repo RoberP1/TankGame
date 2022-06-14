@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe351fde25198646bbc3c3dfcb7014b, type: 3}
-  m_Name: PlayerTankMovementData
+  m_Script: {fileID: 11500000, guid: 76a646b08abc8c346aa05416b99365a1, type: 3}
+  m_Name: PlayerBullet
   m_EditorClassIdentifier: 
-  maxSpeed: 60
-  rotationSpeed: 100
-  acceleration: 70
-  deacceleration: 50
+  speed: 10
+  damage: 25
+  maxDistance: 10

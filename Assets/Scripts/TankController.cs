@@ -36,7 +36,15 @@ public class TankController : MonoBehaviour
 
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
-        aimTurret.Aim(pointerPosition);
+        if (!gameObject.GetComponentInParent<PlayerInput>())
+        {
+            aimTurret.Aim(pointerPosition);
+        }
+        else
+        {
+            //Debug.Log(pointerPosition);
+            aimTurret.AimJoystick(pointerPosition);
+        }
         
     }
 
