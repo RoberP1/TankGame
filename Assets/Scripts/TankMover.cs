@@ -57,6 +57,6 @@ public class TankMover : MonoBehaviour
     private void FixedUpdate()
     {
         rb2d.velocity = (Vector2)transform.up * currentSpeed * currentForewardDirection * Time.fixedDeltaTime;
-        rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * Time.fixedDeltaTime));
+        rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * currentForewardDirection* Time.fixedDeltaTime));
     }
 }

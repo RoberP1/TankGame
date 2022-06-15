@@ -20,6 +20,7 @@ public class AimTurret : MonoBehaviour
     public void AimJoystick(Vector2 inputDirection)
     {
         var rotationStep = turretRotationSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, Vector2.SignedAngle(inputDirection, Vector2.right)), rotationStep);
+        float angle = Vector2.SignedAngle(inputDirection, Vector2.right);
+        if(angle !=0)transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle ), rotationStep);
     }
 }

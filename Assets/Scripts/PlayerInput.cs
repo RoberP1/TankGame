@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
 
+    [SerializeField] string playerNumer;
     private void Awake()
     {
         if (mainCamera == null)
@@ -29,8 +30,13 @@ public class PlayerInput : MonoBehaviour
 
     private void GetShootingInput()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1Joystick" + playerNumer) )
         {
+            for (int i = 0; i < Input.GetJoystickNames().Length; i++)
+            {
+                Debug.Log(Input.GetJoystickNames()[i]);
+            }
+            
             OnShoot?.Invoke();
         }
     }
@@ -49,13 +55,13 @@ public class PlayerInput : MonoBehaviour
     }
     private Vector2 GetJoystickPositon()
     {
-        Vector2 JoyDirection = new Vector2(Input.GetAxis("RightJoyY"), Input.GetAxis("RightJoyX"));
+        Vector2 JoyDirection = new Vector2(Input.GetAxis("RightJoyY"+ playerNumer), Input.GetAxis("RightJoyX" + playerNumer));
         return JoyDirection;
     }
 
     private void GetBodyMovement()
     {
-        Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 movementVector = new Vector2(Input.GetAxisRaw("JoyHorizontal" + playerNumer), Input.GetAxisRaw("JVertical+" + playerNumer) + Input.GetAxisRaw("JVertical-" + playerNumer));
         OnMoveBody?.Invoke(movementVector.normalized);
     }
 }
