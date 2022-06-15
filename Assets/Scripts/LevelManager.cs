@@ -20,7 +20,8 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         bool ps4 = (DualShockController && Input.GetButtonDown("Pause"));
-        if ( ps4|| Input.GetButtonDown("XPause"))
+        bool Xcon = (!DualShockController && Input.GetButtonDown("Pause"));
+        if ( ps4|| Xcon)
         {
             Pause();
         }
