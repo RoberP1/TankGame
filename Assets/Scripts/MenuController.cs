@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -11,6 +12,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] int activeSelectors;
     [SerializeField] int opLength;
     LevelManager levelManager;
+    public UnityEvent OnSelect;
 
 
     void Start()
@@ -32,19 +34,7 @@ public class MenuController : MonoBehaviour
         bool ps4Sumit = (DualShockController && Input.GetButtonDown("Submit"));
         if (ps4Sumit || Input.GetButtonDown("XSubmit"))
         {
-            Debug.Log(activeSelectors);
-            switch (activeSelectors)
-            {
-                case 0:
-                    levelManager.Retry();
-                    break;
-                case 1:
-                    levelManager.MainMenu();
-                    break;
-                default:
-                    levelManager.Resume();
-                    break;
-            }
+            OnSelect?.Invoke();
         }
         if (!canChange) return;
         if (DualShockController && Input.GetAxis("Arrows") <0)
@@ -64,6 +54,38 @@ public class MenuController : MonoBehaviour
             PreOp();
         }
     }
+
+    public void ActionOnClickInGame()
+    {
+        switch (activeSelectors)
+        {
+            case 0:
+                levelManager.Retry();
+                break;
+            case 1:
+                levelManager.MainMenu();
+                break;
+            default:
+                levelManager.Resume();
+                break;
+        }
+    }  
+    public void ActionOnClickMenu()
+    {
+        switch (activeSelectors)
+        {
+            case 0:
+                levelManager.SinglePlayer();
+                break;
+            case 1:
+                levelManager.MultyPlayer();
+                break;
+            default:
+                levelManager.Resume();
+                break;
+        }
+    }
+
     public void SetLength(int op)
     {
         opLength = op;
