@@ -14,10 +14,16 @@ public class PlayerInput : MonoBehaviour
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
 
     [SerializeField] string playerNumer;
+    private bool DualShockController;
     private void Awake()
     {
         if (mainCamera == null)
             mainCamera = Camera.main;
+        
+    }
+    private void Start()
+    {
+        DualShockController = FindObjectOfType<DetectGamePad>().DualShockController;
     }
 
     // Update is called once per frame
@@ -30,13 +36,12 @@ public class PlayerInput : MonoBehaviour
 
     private void GetShootingInput()
     {
-        if (Input.GetButtonDown("Fire1Joystick" + playerNumer) )
+        if (DualShockController && Input.GetButtonDown("Fire1Joystick" + playerNumer) )
         {
-            for (int i = 0; i < Input.GetJoystickNames().Length; i++)
-            {
-                Debug.Log(Input.GetJoystickNames()[i]);
-            }
-            
+            OnShoot?.Invoke();
+        }
+        else if(Input.GetButtonDown("XFire1Joystick" + playerNumer))
+        {
             OnShoot?.Invoke();
         }
     }
@@ -55,13 +60,31 @@ public class PlayerInput : MonoBehaviour
     }
     private Vector2 GetJoystickPositon()
     {
-        Vector2 JoyDirection = new Vector2(Input.GetAxis("RightJoyY"+ playerNumer), Input.GetAxis("RightJoyX" + playerNumer));
-        return JoyDirection;
+        if (DualShockController )
+        {
+            Vector2 JoyDirection = new Vector2(Input.GetAxis("RightJoyY" + playerNumer), Input.GetAxis("RightJoyX" + playerNumer));
+            return JoyDirection;
+        }
+        else
+        {
+            Vector2 JoyDirection = new Vector2(Input.GetAxis("XRightJoyY" + playerNumer), Input.GetAxis("XRightJoyX" + playerNumer));
+            return JoyDirection;
+        }
+        
     }
 
     private void GetBodyMovement()
     {
-        Vector2 movementVector = new Vector2(Input.GetAxisRaw("JoyHorizontal" + playerNumer), Input.GetAxisRaw("JVertical+" + playerNumer) + Input.GetAxisRaw("JVertical-" + playerNumer));
+        Vector2 movementVector;
+        if (DualShockController)
+        {
+            movementVector = new Vector2(Input.GetAxisRaw("JoyHorizontal" + playerNumer), Input.GetAxisRaw("JVertical+" + playerNumer) + Input.GetAxisRaw("JVertical-" + playerNumer));
+        }
+        else
+        {
+            movementVector = new Vector2(Input.GetAxisRaw("XJoyHorizontal" + playerNumer), Input.GetAxisRaw("JVertical" + playerNumer) );
+        }
+
         OnMoveBody?.Invoke(movementVector.normalized);
     }
 }
