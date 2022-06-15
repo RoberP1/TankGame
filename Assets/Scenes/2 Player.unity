@@ -10066,6 +10066,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 07c1f4c62ef52254492412f36d75fc4b, type: 3}
     - target: {fileID: 4729121780003649000, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
+      propertyPath: MaxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729121780003649000, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -10175,7 +10179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8414966680171557456, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
       propertyPath: m_Name
-      value: PatrolingEnemy Variant (5)
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}

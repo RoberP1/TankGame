@@ -9669,6 +9669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DualShockController: 0
+  Controllers: 0
 --- !u!4 &1026934680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2575475115017167582, guid: 1bc84e9af9a0a6d47bd8effb1f57bb82, type: 3}
@@ -9770,6 +9771,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 07c1f4c62ef52254492412f36d75fc4b, type: 3}
+    - target: {fileID: 3203802646853640511, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
+      propertyPath: m_Value
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203802646853640511, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729121780003649000, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
+      propertyPath: MaxHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4729121780003649000, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -9880,7 +9893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8414966680171557456, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
       propertyPath: m_Name
-      value: PatrolingEnemy Variant (5)
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f6aa287dd5d6f542bfe27f5778f9157, type: 3}
