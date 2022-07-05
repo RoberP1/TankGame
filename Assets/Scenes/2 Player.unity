@@ -10631,42 +10631,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
-      value: 461dd972-6261-44f5-9b02-8ab0a0bb9d74
-      objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
-      value: Player/Pause[/DualShock4GamepadHID1/select,/DualShock4GamepadHID/select,/DualShock4GamepadHID2/select,/DualShock4GamepadHID3/select]
-      objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 322341248}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7081722064971136286, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8340656160161697458, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
