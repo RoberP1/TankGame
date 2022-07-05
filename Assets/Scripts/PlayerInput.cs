@@ -16,27 +16,17 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] string playerNumer;
     //private bool DualShockController;
-    public InputSystemPlayer input;
 
 
-    private void OnEnable()
-    {
 
-
-    }
-    private void OnDisable()
-    {
-        input.Disable();
-
-    }
     private void Awake()
     {
-        input = new InputSystemPlayer();
-        input.Enable();
+
         if (mainCamera == null)
             mainCamera = Camera.main;
 
-        input.Player.Shoot.performed += ctx => { OnShoot?.Invoke(); };
+        //input.Player.Shoot.performed += ctx => { OnShoot?.Invoke(); };
+
     }
     private void Start()
     {
@@ -52,30 +42,40 @@ public class PlayerInput : MonoBehaviour
         GetShootingInput();
         */
         GetTurretMovement();
+        
         GetBodyMovement();
+        //ResetInput();
     }
 
-    private void GetShootingInput()
+
+
+    public void GetShootingInput()
     {
-        /*
-        if (DualShockController && Input.GetButtonDown("Fire1Joystick" + playerNumer) )
-        {
-            OnShoot?.Invoke();
-        }
-        else if(Input.GetButtonDown("XFire1Joystick" + playerNumer))
-        {
-            OnShoot?.Invoke();
-        }*/
-        
+        OnShoot?.Invoke();
     }
 
     private void GetTurretMovement()
     {
-        AimUpDown = input.Player.AImUpDown.ReadValue<float>();
-        AimRightLeft = input.Player.AimRightLeft.ReadValue<float>();
         Vector2 AimVector = new Vector2(-AimRightLeft, AimUpDown);
         OnMoveTurret?.Invoke(AimVector);
     }
+    public void SetAimUpDown(InputAction.CallbackContext ctx)
+    {
+        AimUpDown = ctx.ReadValue<float>();
+    }
+    public void SetMoveUpDown(InputAction.CallbackContext ctx)
+    {
+        UpDown = ctx.ReadValue<float>();
+    }
+    public void SetAimRightLeft(InputAction.CallbackContext ctx)
+    {
+        AimRightLeft = ctx.ReadValue<float>();
+    }
+    public void SetMoveRightLeft(InputAction.CallbackContext ctx)
+    {
+        RightLeft = ctx.ReadValue<float>();
+    }
+
 
     private Vector2 GetMousePositon()
     {
@@ -102,8 +102,6 @@ public class PlayerInput : MonoBehaviour
 
     private void GetBodyMovement()
     {
-        UpDown = input.Player.MoveUpDown.ReadValue<float>();
-        RightLeft = input.Player.MoveRightLeft.ReadValue<float>();
         Vector2 movementVector =new Vector2(RightLeft, UpDown); ;
         //movementVector = MoveInput.ReadValue<Vector2>();
         /*
