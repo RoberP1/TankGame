@@ -17,7 +17,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] string playerNumer;
     //private bool DualShockController;
 
-
+    public static event Action<Transform> OnDie;
 
     private void Awake()
     {
@@ -76,7 +76,10 @@ public class PlayerInput : MonoBehaviour
         RightLeft = ctx.ReadValue<float>();
     }
 
-
+    public void die()
+    {
+        OnDie?.Invoke(transform);
+    }
     private Vector2 GetMousePositon()
     {
         Vector3 mousePosition = Input.mousePosition;

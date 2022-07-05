@@ -588,12 +588,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: MaxHealth
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.size
@@ -604,16 +608,32 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 6753755278722144077}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 6753755278722144082}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: die
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -636,11 +656,19 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerInput, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.UI.Slider, UnityEngine.UI
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3847974792894885825, guid: 8ef0ad234f12e714e8ee6d91b7a5678f, type: 3}
@@ -829,7 +857,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6753755278257016245}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1001 &8355243344995354328
 PrefabInstance:
   m_ObjectHideFlags: 0

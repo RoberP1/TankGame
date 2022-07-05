@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class Damagable : MonoBehaviour
         }
     }
 
-
+    
     public UnityEvent OnDead;
     public UnityEvent<float> OnHealthChange;
     public UnityEvent OnHit, OnHeal;
@@ -38,6 +39,7 @@ public class Damagable : MonoBehaviour
         if (Health <= 0)
         {
             OnDead?.Invoke();
+            
         }
         else
         {
