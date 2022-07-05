@@ -314,6 +314,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bfd8987d-a596-459d-ab06-d150dace70f4
     m_ActionName: Player/Shoot[/DualShock4GamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6753755278722144082}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 461dd972-6261-44f5-9b02-8ab0a0bb9d74
+    m_ActionName: Player/Pause[/DualShock4GamepadHID1/select,/DualShock4GamepadHID/select,/DualShock4GamepadHID2/select,/DualShock4GamepadHID3/select,/DualShock4GamepadHID4/select,/DualShock4GamepadHID5/select]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6753755278722144082}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: ChangeOp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 688cdb7b-1669-46ab-a9e6-789a64b586e8
+    m_ActionName: Player/ChangeOp[/DualShock4GamepadHID1/dpad/down,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID2/dpad/down,/DualShock4GamepadHID3/dpad/down,/DualShock4GamepadHID4/dpad/down,/DualShock4GamepadHID5/dpad/down,/DualShock4GamepadHID1/dpad/up,/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID2/dpad/up,/DualShock4GamepadHID3/dpad/up,/DualShock4GamepadHID4/dpad/up,/DualShock4GamepadHID5/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6753755278722144082}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: Sumit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 044a8f4a-fc9d-4716-a471-1f6f064f8f56
+    m_ActionName: Player/MenuSumit[/DualShock4GamepadHID1/buttonSouth,/DualShock4GamepadHID/buttonSouth,/DualShock4GamepadHID2/buttonSouth,/DualShock4GamepadHID3/buttonSouth,/DualShock4GamepadHID4/buttonSouth,/DualShock4GamepadHID5/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

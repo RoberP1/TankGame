@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    private bool DualShockController;
-    private bool canChange=true;
     [SerializeField] GameObject[] selectors;
     [SerializeField] int activeSelectors;
     [SerializeField] int opLength;
@@ -17,7 +16,6 @@ public class MenuController : MonoBehaviour
 
     void Start()
     {
-        DualShockController = FindObjectOfType<DetectGamePad>().DualShockController;
         levelManager = FindObjectOfType<LevelManager>();
         for (int i = 0; i < opLength; i++)
         {
@@ -28,32 +26,6 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        bool ps4Sumit = (DualShockController && Input.GetButtonDown("Submit"));
-        if (ps4Sumit || Input.GetButtonDown("XSubmit"))
-        {
-            OnSelect?.Invoke();
-        }
-        if (!canChange) return;
-        if (DualShockController && Input.GetAxis("Arrows") <0)
-        {
-            NextOp();
-        }
-        else if (DualShockController && Input.GetAxis("Arrows") > 0)
-        {
-            PreOp();
-        }
-        else if (!DualShockController && Input.GetAxis("XArrows") < 0)
-        {
-            NextOp();
-        }
-        else if (!DualShockController && Input.GetAxis("XArrows") > 0)
-        {
-            PreOp();
-        }
-    }
 
     public void ActionOnClickInGame()
     {
@@ -90,6 +62,11 @@ public class MenuController : MonoBehaviour
     {
         opLength = op;
     }
+    public void ChangeOp(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<float>() > 0) NextOp();
+        else if(ctx.ReadValue<float>() < 0) PreOp();
+    }
     public void NextOp()
     {
         if (activeSelectors + 1 >= opLength)
@@ -104,7 +81,6 @@ public class MenuController : MonoBehaviour
             activeSelectors++;
             selectors[activeSelectors].SetActive(true);
         }
-        StartCoroutine(ChangeDelay());
     }  
     public void PreOp()
     {
@@ -120,12 +96,11 @@ public class MenuController : MonoBehaviour
             activeSelectors--;
             selectors[activeSelectors].SetActive(true);
         }
-        StartCoroutine(ChangeDelay());
     }
-    IEnumerator ChangeDelay()
+    public void Sumit()
     {
-        canChange = false;
-        yield return new WaitForSeconds(0.5f);
-        canChange = true;
+        OnSelect?.Invoke();
     }
+
+
 }

@@ -106,18 +106,21 @@ public class PlayerInput : MonoBehaviour
     private void GetBodyMovement()
     {
         Vector2 movementVector =new Vector2(RightLeft, UpDown); ;
-        //movementVector = MoveInput.ReadValue<Vector2>();
-        /*
-        if (DualShockController)
-        {
-            movementVector = new Vector2(Input.GetAxisRaw("JoyHorizontal" + playerNumer), Input.GetAxisRaw("JVertical+" + playerNumer) + Input.GetAxisRaw("JVertical-" + playerNumer));
-        }
-        else
-        {
-            movementVector = new Vector2(Input.GetAxisRaw("XJoyHorizontal" + playerNumer), Input.GetAxisRaw("JVertical" + playerNumer) );
-        }
-        */
+
         OnMoveBody?.Invoke(movementVector.normalized);
         
     }
+    public void Pause()
+    {
+        FindObjectOfType<LevelManager>().Pause();
+    }
+    public void ChangeOp(InputAction.CallbackContext ctx)
+    {
+        FindObjectOfType<MenuController>()?.ChangeOp(ctx);
+    }
+    public void Sumit()
+    {
+        FindObjectOfType<MenuController>()?.Sumit();
+    }
+
 }

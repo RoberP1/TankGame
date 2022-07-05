@@ -11,20 +11,14 @@ public class LevelManager : MonoBehaviour
     public UnityEvent OnFinish;
     public UnityEvent OnPause;
     public UnityEvent OnUnPause;
-    private bool DualShockController;
 
-    private void Start()
-    {
-        DualShockController = GetComponent<DetectGamePad>().DualShockController;
-    }
+
+
     private void Update()
     {
-        bool ps4 = (DualShockController && Input.GetButtonDown("Pause"));
-        bool Xcon = (!DualShockController && Input.GetButtonDown("Pause"));
-        if ( ps4|| Xcon)
-        {
-            Pause();
-        }
+
+            //Pause();
+
     }
     public void Finish()
     {

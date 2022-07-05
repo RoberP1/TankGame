@@ -71,6 +71,33 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""461dd972-6261-44f5-9b02-8ab0a0bb9d74"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeOp"",
+                    ""type"": ""Value"",
+                    ""id"": ""688cdb7b-1669-46ab-a9e6-789a64b586e8"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MenuSumit"",
+                    ""type"": ""Button"",
+                    ""id"": ""044a8f4a-fc9d-4716-a471-1f6f064f8f56"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -216,6 +243,61 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6114890-aa3b-4996-b08e-cd740bbb3eac"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""4c32e2d0-fb88-405e-8ae8-12905b6862c8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeOp"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""32d47e5c-4cf4-4cb3-a24e-0202f80ead04"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeOp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b6f6dc72-77f8-48c2-b4a1-bc1328553444"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeOp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67d14cdc-77fa-49f2-bd6e-c54199b82364"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuSumit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -229,6 +311,9 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
         m_Player_MoveUpDown = m_Player.FindAction("MoveUpDown", throwIfNotFound: true);
         m_Player_MoveRightLeft = m_Player.FindAction("MoveRightLeft", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_ChangeOp = m_Player.FindAction("ChangeOp", throwIfNotFound: true);
+        m_Player_MenuSumit = m_Player.FindAction("MenuSumit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -293,6 +378,9 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MoveUpDown;
     private readonly InputAction m_Player_MoveRightLeft;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_ChangeOp;
+    private readonly InputAction m_Player_MenuSumit;
     public struct PlayerActions
     {
         private @InputSystemPlayer m_Wrapper;
@@ -302,6 +390,9 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
         public InputAction @MoveUpDown => m_Wrapper.m_Player_MoveUpDown;
         public InputAction @MoveRightLeft => m_Wrapper.m_Player_MoveRightLeft;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @ChangeOp => m_Wrapper.m_Player_ChangeOp;
+        public InputAction @MenuSumit => m_Wrapper.m_Player_MenuSumit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -326,6 +417,15 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @ChangeOp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeOp;
+                @ChangeOp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeOp;
+                @ChangeOp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeOp;
+                @MenuSumit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
+                @MenuSumit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
+                @MenuSumit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -345,6 +445,15 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @ChangeOp.started += instance.OnChangeOp;
+                @ChangeOp.performed += instance.OnChangeOp;
+                @ChangeOp.canceled += instance.OnChangeOp;
+                @MenuSumit.started += instance.OnMenuSumit;
+                @MenuSumit.performed += instance.OnMenuSumit;
+                @MenuSumit.canceled += instance.OnMenuSumit;
             }
         }
     }
@@ -356,5 +465,8 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
         void OnMoveUpDown(InputAction.CallbackContext context);
         void OnMoveRightLeft(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnChangeOp(InputAction.CallbackContext context);
+        void OnMenuSumit(InputAction.CallbackContext context);
     }
 }
