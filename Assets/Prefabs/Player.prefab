@@ -208,6 +208,112 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playerNumer: 1
+  MoveInput:
+    m_Name: Move Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2a7272f1-ce7b-4f89-944d-486551a4ad7b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Gamepad
+      m_Id: fd7b4e2a-4d26-414a-a946-d3e5c58cf9e1
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 1248efb3-eb65-4ee5-aa0a-8b2b98f3149b
+      m_Path: <Gamepad>/rightTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: be600d2b-097e-4859-874c-d5f9b26c6f20
+      m_Path: <Gamepad>/leftTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 1d42ff51-2885-4237-a6f5-fde2c828960b
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 66018275-d87d-4331-8bc6-0f9cae300b92
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    m_Flags: 0
+  AimInputUpDown:
+    m_Name: Aim Input Up Down
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 8c62a192-a4b8-4f50-8397-533032b2b9d7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: UpDown
+      m_Id: 7118551d-1a20-4dd6-8f86-3516183603d2
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Input Up Down
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: fef1c8ef-336a-4c48-9b71-a16172dde611
+      m_Path: <Gamepad>/rightStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Input Up Down
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: b5dd5b2b-7fdf-4b60-98eb-2afb97963b25
+      m_Path: <Gamepad>/rightStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Input Up Down
+      m_Flags: 8
+    - m_Name: RightLeft
+      m_Id: 084fdbd9-7b92-4ca4-9108-3481fcbf926b
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Input Up Down
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: e21f0c43-51da-4d54-847f-1d92073d2c59
+      m_Path: <Gamepad>/rightStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Input Up Down
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 21521107-196d-4ce3-b95d-dc736256252c
+      m_Path: <Gamepad>/rightStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Input Up Down
+      m_Flags: 8
+    m_Flags: 0
 --- !u!1 &6753755278821507417
 GameObject:
   m_ObjectHideFlags: 0
