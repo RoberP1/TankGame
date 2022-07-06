@@ -10694,6 +10694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6753755278722144077, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6753755278722144083, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -10740,19 +10744,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753755278821507422, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6753755278821507422, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8340656160161697458, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8340656160161697458, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
@@ -10844,7 +10848,7 @@ MonoBehaviour:
   m_NotificationBehavior: 2
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 1
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -10866,13 +10870,29 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Join
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: d694c543-9d7a-412f-86c8-b5f5d78ea9f0
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 1dde9073-cd9b-4af2-a66f-b1a26ab3624d
+        m_Path: <Gamepad>/leftShoulder
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 2f7b205f-290e-4b48-9dff-f4733f5b8061
+        m_Path: <Gamepad>/leftStickPress
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_PlayerPrefab: {fileID: 6753755278722144077, guid: 0bbea14cb1bcf8d4aa475cf510f0fabe, type: 3}
