@@ -49,7 +49,7 @@ public class FollowPlayers : MonoBehaviour
     public void PlayerDead(Transform playerDead)
     {
         players[players.IndexOf(playerDead)] = null;
-        
+        FindObjectOfType<LevelManager>().Finish();
     }
     private void OnEnable()
     {

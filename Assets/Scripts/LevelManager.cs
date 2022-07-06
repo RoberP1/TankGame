@@ -8,12 +8,16 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
+    public UnityEvent OnStart;
     public UnityEvent OnFinish;
     public UnityEvent OnPause;
     public UnityEvent OnUnPause;
+    public bool pause;
 
-
-
+    private void Start()
+    {
+        OnStart?.Invoke();
+    }
     private void Update()
     {
 
@@ -24,6 +28,7 @@ public class LevelManager : MonoBehaviour
     {
         if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
         OnFinish?.Invoke();
+        pause = true;
     }
     public void Win()
     {
@@ -31,7 +36,9 @@ public class LevelManager : MonoBehaviour
     } 
     public void Pause()
     {
+        if (pause) return;
         OnPause?.Invoke();
+        pause = true;
     }
     public void Retry()
     {
@@ -45,6 +52,7 @@ public class LevelManager : MonoBehaviour
     internal void Resume()
     {
         OnUnPause?.Invoke();
+        pause = false;
     }
 
     public void SinglePlayer()

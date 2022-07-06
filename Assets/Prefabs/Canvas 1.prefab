@@ -690,6 +690,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  CanChange: 1
 --- !u!1 &2672522218401777251
 GameObject:
   m_ObjectHideFlags: 0

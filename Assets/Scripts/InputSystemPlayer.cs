@@ -267,7 +267,7 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""positive"",
                     ""id"": ""32d47e5c-4cf4-4cb3-a24e-0202f80ead04"",
                     ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
@@ -278,7 +278,7 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""negative"",
                     ""id"": ""b6f6dc72-77f8-48c2-b4a1-bc1328553444"",
                     ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",

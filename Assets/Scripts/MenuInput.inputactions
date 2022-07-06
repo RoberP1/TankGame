@@ -31,6 +31,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "NextOp",
+                    "type": "Button",
+                    "id": "fa77f213-257a-47f2-a1ce-7340a791a018",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PrevOp",
+                    "type": "Button",
+                    "id": "85c7814f-8637-4990-8a26-742d24dc0eef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -62,7 +80,7 @@
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Selection",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -119,6 +137,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8f18f32-184b-4acb-9fe0-d422edbc29ea",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "Press(pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextOp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b63905ce-3fce-4db4-8b48-1a4e80ed3a38",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextOp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e106bbdf-54e3-4055-b17e-88a46443ef96",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "Press(pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrevOp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ea47c88-54ab-4c3f-9c8c-71959a360b9b",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrevOp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -78,7 +78,7 @@ public class PlayerInput : MonoBehaviour
 
     public void die()
     {
-        OnDie?.Invoke(transform);
+        OnDie?.Invoke(transform.GetChild(0));
     }
     private Vector2 GetMousePositon()
     {
@@ -113,6 +113,7 @@ public class PlayerInput : MonoBehaviour
     public void Pause()
     {
         FindObjectOfType<LevelManager>().Pause();
+
     }
     public void ChangeOp(InputAction.CallbackContext ctx)
     {
