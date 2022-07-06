@@ -18,10 +18,11 @@ public class PlayerInput : MonoBehaviour
     //private bool DualShockController;
 
     public static event Action<Transform> OnDie;
+    bool alive;
 
     private void Awake()
     {
-
+        alive = true;
         if (mainCamera == null)
             mainCamera = Camera.main;
 
@@ -36,15 +37,11 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        
-        
-        GetShootingInput();
-        */
+        if (!alive) return;
         GetTurretMovement();
         
         GetBodyMovement();
-        //ResetInput();
+
     }
 
 
@@ -78,6 +75,7 @@ public class PlayerInput : MonoBehaviour
 
     public void die()
     {
+        alive = false;
         OnDie?.Invoke(transform.GetChild(0));
     }
     private Vector2 GetMousePositon()

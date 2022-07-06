@@ -13,7 +13,11 @@ public class FollowPlayers : MonoBehaviour
         PlayerInput[] Oplayers =FindObjectsOfType<PlayerInput>();
         for (int i = 0; i < Oplayers.Length; i++)
         {
-            players[i] = Oplayers[i].transform.GetChild(0);
+            if (!players.Contains(Oplayers[i].transform.GetChild(0)))
+            {
+                players.Add(Oplayers[i].transform.GetChild(0));
+            }
+           
         }
         playersCount = Oplayers.Length;
     }
@@ -23,9 +27,9 @@ public class FollowPlayers : MonoBehaviour
         PlayerInput[] Oplayers = FindObjectsOfType<PlayerInput>();
         for (int i = 0; i < Oplayers.Length; i++)
         {
-            players[i] = Oplayers[i].transform.GetChild(0);
+            players.Add(Oplayers[i].transform.GetChild(0));
         }
-        playersCount = 1;
+        playersCount = Oplayers.Length;
     }
     private void Update()
     {
@@ -36,19 +40,19 @@ public class FollowPlayers : MonoBehaviour
         float z = 0;
         foreach (var player in players)
         {
-            if (player != null)
-            {
+
                 x += player.position.x;
                 y += player.position.y;
                 z += player.position.z;
-            }
+
         }
-        transform.position = new Vector3(x, y, z) / playersCount;
+        if(playersCount != 0)transform.position = new Vector3(x, y, z) / playersCount;
 
     }
     public void PlayerDead(Transform playerDead)
     {
-        players[players.IndexOf(playerDead)] = null;
+        //players[players.IndexOf(playerDead)] = null;
+        players.Remove(playerDead);
         FindObjectOfType<LevelManager>().Finish();
     }
     private void OnEnable()
