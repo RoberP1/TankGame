@@ -54,7 +54,7 @@ public class PlayerInput : MonoBehaviour
     private void GetTurretMovement()
     {
         Vector2 AimVector = new Vector2(-AimRightLeft, AimUpDown);
-        OnMoveTurret?.Invoke(AimVector);
+        if(AimVector.sqrMagnitude >= 0.1f)OnMoveTurret?.Invoke(AimVector);
     }
     public void SetAimUpDown(InputAction.CallbackContext ctx)
     {

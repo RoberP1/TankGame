@@ -21,8 +21,9 @@ public class AimTurret : MonoBehaviour
     {
         var rotationStep = turretRotationSpeed * Time.deltaTime;
         float angle = Vector2.SignedAngle(inputDirection, Vector2.up);
+        //var angle = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg;
+       if (angle >= 0.1f || angle <= -0.1f) transform.rotation =  Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle),rotationStep);
 
-        if (angle >= 0.1f || angle <= -0.1f) transform.rotation =  Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle),rotationStep);
             
     }
 }
