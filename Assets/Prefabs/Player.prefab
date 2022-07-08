@@ -209,6 +209,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playerNumer: 1
+  pause: 0
 --- !u!114 &7081722064971136286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6753755278722144082}
         m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
-        m_MethodName: SetAimUpDown
+        m_MethodName: SetAim
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -251,19 +252,7 @@ MonoBehaviour:
     m_ActionId: c4aa83c6-1265-41cf-9de2-37c93a08e95a
     m_ActionName: Player/AImUpDown[/DualShock4GamepadHID/rightStick/down,/DualShock4GamepadHID/rightStick/up]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6753755278722144082}
-        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
-        m_MethodName: SetAimRightLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 4a35c95e-ddf9-4e0f-ad37-70e2f8936dc6
     m_ActionName: Player/AimRightLeft[/DualShock4GamepadHID/rightStick/left,/DualShock4GamepadHID/rightStick/right]
   - m_PersistentCalls:

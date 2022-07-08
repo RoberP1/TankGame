@@ -28,18 +28,9 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
             ""id"": ""f36b00ed-f8cb-455f-a322-075d126bf152"",
             ""actions"": [
                 {
-                    ""name"": ""AImUpDown"",
-                    ""type"": ""Value"",
-                    ""id"": ""c4aa83c6-1265-41cf-9de2-37c93a08e95a"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""AimRightLeft"",
+                    ""name"": ""MenuSumit"",
                     ""type"": ""Button"",
-                    ""id"": ""4a35c95e-ddf9-4e0f-ad37-70e2f8936dc6"",
+                    ""id"": ""044a8f4a-fc9d-4716-a471-1f6f064f8f56"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -83,17 +74,26 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""ChangeOp"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""688cdb7b-1669-46ab-a9e6-789a64b586e8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AImUpDown"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""c4aa83c6-1265-41cf-9de2-37c93a08e95a"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MenuSumit"",
+                    ""name"": ""AimRightLeft"",
                     ""type"": ""Button"",
-                    ""id"": ""044a8f4a-fc9d-4716-a471-1f6f064f8f56"",
+                    ""id"": ""4a35c95e-ddf9-4e0f-ad37-70e2f8936dc6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -101,72 +101,6 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": ""UpDown"",
-                    ""id"": ""fd503234-56fe-437b-a450-55aa900f6bb3"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AImUpDown"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Negative"",
-                    ""id"": ""4545d7b0-32de-4523-9bca-4f95782f9ec6"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AImUpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Positive"",
-                    ""id"": ""3f55bd51-c5eb-427a-a704-0e4c36c751a6"",
-                    ""path"": ""<Gamepad>/rightStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AImUpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""RightLeft"",
-                    ""id"": ""b1ccbc74-e40b-4e0e-aff8-18b5c128d30c"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AimRightLeft"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""ec270cc6-ad7f-4b13-8682-0188e70787e1"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AimRightLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""2e78f7e2-dd14-41dd-9d3b-15ff193c54c7"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AimRightLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
                 {
                     ""name"": ""UpDown"",
                     ""id"": ""c82e9a3e-a5ca-44ea-8b2b-ed47b3bdf8b5"",
@@ -236,7 +170,7 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2015961a-2cf6-40ef-ab8f-6b35366b1e3e"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -289,6 +223,72 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""UpDown"",
+                    ""id"": ""fd503234-56fe-437b-a450-55aa900f6bb3"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AImUpDown"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""4545d7b0-32de-4523-9bca-4f95782f9ec6"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AImUpDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""3f55bd51-c5eb-427a-a704-0e4c36c751a6"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AImUpDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""RightLeft"",
+                    ""id"": ""b1ccbc74-e40b-4e0e-aff8-18b5c128d30c"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimRightLeft"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""ec270cc6-ad7f-4b13-8682-0188e70787e1"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimRightLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""2e78f7e2-dd14-41dd-9d3b-15ff193c54c7"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimRightLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""67d14cdc-77fa-49f2-bd6e-c54199b82364"",
                     ""path"": ""<Gamepad>/buttonSouth"",
@@ -306,14 +306,14 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_AImUpDown = m_Player.FindAction("AImUpDown", throwIfNotFound: true);
-        m_Player_AimRightLeft = m_Player.FindAction("AimRightLeft", throwIfNotFound: true);
+        m_Player_MenuSumit = m_Player.FindAction("MenuSumit", throwIfNotFound: true);
         m_Player_MoveUpDown = m_Player.FindAction("MoveUpDown", throwIfNotFound: true);
         m_Player_MoveRightLeft = m_Player.FindAction("MoveRightLeft", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_ChangeOp = m_Player.FindAction("ChangeOp", throwIfNotFound: true);
-        m_Player_MenuSumit = m_Player.FindAction("MenuSumit", throwIfNotFound: true);
+        m_Player_AImUpDown = m_Player.FindAction("AImUpDown", throwIfNotFound: true);
+        m_Player_AimRightLeft = m_Player.FindAction("AimRightLeft", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -373,26 +373,26 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_AImUpDown;
-    private readonly InputAction m_Player_AimRightLeft;
+    private readonly InputAction m_Player_MenuSumit;
     private readonly InputAction m_Player_MoveUpDown;
     private readonly InputAction m_Player_MoveRightLeft;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_ChangeOp;
-    private readonly InputAction m_Player_MenuSumit;
+    private readonly InputAction m_Player_AImUpDown;
+    private readonly InputAction m_Player_AimRightLeft;
     public struct PlayerActions
     {
         private @InputSystemPlayer m_Wrapper;
         public PlayerActions(@InputSystemPlayer wrapper) { m_Wrapper = wrapper; }
-        public InputAction @AImUpDown => m_Wrapper.m_Player_AImUpDown;
-        public InputAction @AimRightLeft => m_Wrapper.m_Player_AimRightLeft;
+        public InputAction @MenuSumit => m_Wrapper.m_Player_MenuSumit;
         public InputAction @MoveUpDown => m_Wrapper.m_Player_MoveUpDown;
         public InputAction @MoveRightLeft => m_Wrapper.m_Player_MoveRightLeft;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @ChangeOp => m_Wrapper.m_Player_ChangeOp;
-        public InputAction @MenuSumit => m_Wrapper.m_Player_MenuSumit;
+        public InputAction @AImUpDown => m_Wrapper.m_Player_AImUpDown;
+        public InputAction @AimRightLeft => m_Wrapper.m_Player_AimRightLeft;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -402,12 +402,9 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @AImUpDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAImUpDown;
-                @AImUpDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAImUpDown;
-                @AImUpDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAImUpDown;
-                @AimRightLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAimRightLeft;
-                @AimRightLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAimRightLeft;
-                @AimRightLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAimRightLeft;
+                @MenuSumit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
+                @MenuSumit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
+                @MenuSumit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
                 @MoveUpDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveUpDown;
                 @MoveUpDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveUpDown;
                 @MoveUpDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveUpDown;
@@ -423,19 +420,19 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                 @ChangeOp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeOp;
                 @ChangeOp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeOp;
                 @ChangeOp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeOp;
-                @MenuSumit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
-                @MenuSumit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
-                @MenuSumit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenuSumit;
+                @AImUpDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAImUpDown;
+                @AImUpDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAImUpDown;
+                @AImUpDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAImUpDown;
+                @AimRightLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAimRightLeft;
+                @AimRightLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAimRightLeft;
+                @AimRightLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAimRightLeft;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @AImUpDown.started += instance.OnAImUpDown;
-                @AImUpDown.performed += instance.OnAImUpDown;
-                @AImUpDown.canceled += instance.OnAImUpDown;
-                @AimRightLeft.started += instance.OnAimRightLeft;
-                @AimRightLeft.performed += instance.OnAimRightLeft;
-                @AimRightLeft.canceled += instance.OnAimRightLeft;
+                @MenuSumit.started += instance.OnMenuSumit;
+                @MenuSumit.performed += instance.OnMenuSumit;
+                @MenuSumit.canceled += instance.OnMenuSumit;
                 @MoveUpDown.started += instance.OnMoveUpDown;
                 @MoveUpDown.performed += instance.OnMoveUpDown;
                 @MoveUpDown.canceled += instance.OnMoveUpDown;
@@ -451,22 +448,25 @@ public partial class @InputSystemPlayer : IInputActionCollection2, IDisposable
                 @ChangeOp.started += instance.OnChangeOp;
                 @ChangeOp.performed += instance.OnChangeOp;
                 @ChangeOp.canceled += instance.OnChangeOp;
-                @MenuSumit.started += instance.OnMenuSumit;
-                @MenuSumit.performed += instance.OnMenuSumit;
-                @MenuSumit.canceled += instance.OnMenuSumit;
+                @AImUpDown.started += instance.OnAImUpDown;
+                @AImUpDown.performed += instance.OnAImUpDown;
+                @AImUpDown.canceled += instance.OnAImUpDown;
+                @AimRightLeft.started += instance.OnAimRightLeft;
+                @AimRightLeft.performed += instance.OnAimRightLeft;
+                @AimRightLeft.canceled += instance.OnAimRightLeft;
             }
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
     public interface IPlayerActions
     {
-        void OnAImUpDown(InputAction.CallbackContext context);
-        void OnAimRightLeft(InputAction.CallbackContext context);
+        void OnMenuSumit(InputAction.CallbackContext context);
         void OnMoveUpDown(InputAction.CallbackContext context);
         void OnMoveRightLeft(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnChangeOp(InputAction.CallbackContext context);
-        void OnMenuSumit(InputAction.CallbackContext context);
+        void OnAImUpDown(InputAction.CallbackContext context);
+        void OnAimRightLeft(InputAction.CallbackContext context);
     }
 }

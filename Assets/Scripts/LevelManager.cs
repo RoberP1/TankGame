@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
     public void Pause()
     {
         if (pause) return;
+        FindObjectOfType<PlayerInput>().pause = true;
         OnPause?.Invoke();
         pause = true;
     }
@@ -51,7 +52,9 @@ public class LevelManager : MonoBehaviour
 
     internal void Resume()
     {
+        FindObjectOfType<PlayerInput>().pause = false;
         OnUnPause?.Invoke();
+
         pause = false;
     }
 
@@ -61,6 +64,7 @@ public class LevelManager : MonoBehaviour
     }
     public void MultyPlayer()
     {
+        Debug.Log("Loading");
         SceneManager.LoadScene(2);
     }
 }

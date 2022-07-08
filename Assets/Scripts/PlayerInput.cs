@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
     private float UpDown, RightLeft, AimUpDown, AimRightLeft;
+    private Vector2 AimVector;
     [SerializeField]private Camera mainCamera;
 
     public UnityEvent OnShoot = new UnityEvent();
@@ -15,10 +17,13 @@ public class PlayerInput : MonoBehaviour
     public UnityEvent<Vector2> OnMoveTurret = new UnityEvent<Vector2>();
 
     [SerializeField] string playerNumer;
+
+
     //private bool DualShockController;
 
     public static event Action<Transform> OnDie;
     bool alive;
+    public bool pause;
 
     private void Awake()
     {
@@ -48,18 +53,30 @@ public class PlayerInput : MonoBehaviour
 
     public void GetShootingInput()
     {
-        OnShoot?.Invoke();
+        if(!pause)OnShoot?.Invoke();
     }
 
     private void GetTurretMovement()
     {
+        /*
         Vector2 AimVector = new Vector2(-AimRightLeft, AimUpDown);
-        if(AimVector.sqrMagnitude >= 0.1f)OnMoveTurret?.Invoke(AimVector);
+
+        if (AimVector.sqrMagnitude >= 0.1f)OnMoveTurret?.Invoke(AimVector);
+        */
+        OnMoveTurret?.Invoke(AimVector);
+    }
+    public void SetAim(InputAction.CallbackContext ctx)
+    {
+        AimVector = new Vector2(ctx.ReadValue<float>(), 0);
     }
     public void SetAimUpDown(InputAction.CallbackContext ctx)
     {
         AimUpDown = ctx.ReadValue<float>();
-    }
+
+    }   
+
+
+
     public void SetMoveUpDown(InputAction.CallbackContext ctx)
     {
         UpDown = ctx.ReadValue<float>();
@@ -67,6 +84,7 @@ public class PlayerInput : MonoBehaviour
     public void SetAimRightLeft(InputAction.CallbackContext ctx)
     {
         AimRightLeft = ctx.ReadValue<float>();
+        
     }
     public void SetMoveRightLeft(InputAction.CallbackContext ctx)
     {
@@ -119,7 +137,7 @@ public class PlayerInput : MonoBehaviour
     }
     public void Sumit()
     {
-        FindObjectOfType<MenuController>()?.Sumit();
+        if(pause)FindObjectOfType<MenuController>()?.Sumit();
     }
 
 }

@@ -6,18 +6,9 @@
             "id": "f36b00ed-f8cb-455f-a322-075d126bf152",
             "actions": [
                 {
-                    "name": "AImUpDown",
-                    "type": "Value",
-                    "id": "c4aa83c6-1265-41cf-9de2-37c93a08e95a",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "AimRightLeft",
+                    "name": "MenuSumit",
                     "type": "Button",
-                    "id": "4a35c95e-ddf9-4e0f-ad37-70e2f8936dc6",
+                    "id": "044a8f4a-fc9d-4716-a471-1f6f064f8f56",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -61,17 +52,26 @@
                 },
                 {
                     "name": "ChangeOp",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "688cdb7b-1669-46ab-a9e6-789a64b586e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AImUpDown",
+                    "type": "PassThrough",
+                    "id": "c4aa83c6-1265-41cf-9de2-37c93a08e95a",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
-                    "name": "MenuSumit",
+                    "name": "AimRightLeft",
                     "type": "Button",
-                    "id": "044a8f4a-fc9d-4716-a471-1f6f064f8f56",
+                    "id": "4a35c95e-ddf9-4e0f-ad37-70e2f8936dc6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -79,72 +79,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "UpDown",
-                    "id": "fd503234-56fe-437b-a450-55aa900f6bb3",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AImUpDown",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Negative",
-                    "id": "4545d7b0-32de-4523-9bca-4f95782f9ec6",
-                    "path": "<Gamepad>/rightStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AImUpDown",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Positive",
-                    "id": "3f55bd51-c5eb-427a-a704-0e4c36c751a6",
-                    "path": "<Gamepad>/rightStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AImUpDown",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "RightLeft",
-                    "id": "b1ccbc74-e40b-4e0e-aff8-18b5c128d30c",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AimRightLeft",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "ec270cc6-ad7f-4b13-8682-0188e70787e1",
-                    "path": "<Gamepad>/rightStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AimRightLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "2e78f7e2-dd14-41dd-9d3b-15ff193c54c7",
-                    "path": "<Gamepad>/rightStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AimRightLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
                 {
                     "name": "UpDown",
                     "id": "c82e9a3e-a5ca-44ea-8b2b-ed47b3bdf8b5",
@@ -214,7 +148,7 @@
                 {
                     "name": "",
                     "id": "2015961a-2cf6-40ef-ab8f-6b35366b1e3e",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -263,6 +197,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "ChangeOp",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "UpDown",
+                    "id": "fd503234-56fe-437b-a450-55aa900f6bb3",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AImUpDown",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "4545d7b0-32de-4523-9bca-4f95782f9ec6",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AImUpDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "3f55bd51-c5eb-427a-a704-0e4c36c751a6",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AImUpDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "RightLeft",
+                    "id": "b1ccbc74-e40b-4e0e-aff8-18b5c128d30c",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimRightLeft",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "ec270cc6-ad7f-4b13-8682-0188e70787e1",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimRightLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "2e78f7e2-dd14-41dd-9d3b-15ff193c54c7",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimRightLeft",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
